@@ -2,6 +2,7 @@ import { FormEvent, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '../components/Button';
 import { RoomCode } from '../components/RoomCode';
+import { Question } from '../components/Question';
 
 import logoImg from '../assets/images/logo.svg';
 import '../styles/room.scss';
@@ -22,7 +23,7 @@ type RoomParams = {
   id: string;
 }
 
-type Question = {
+type QuestionType = {
   id: string;
   author: {
     name: string;
@@ -38,7 +39,7 @@ export function Room() {
   const { user } = useAuth();
   const [newQuestion, setNewQuestion] = useState('');
   const [title, setTitle] = useState('');
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<QuestionType[]>([]);
 
   useEffect(() => {
     const roomRef = database.ref(`rooms/${id}`);
@@ -120,7 +121,16 @@ export function Room() {
           </div>
         </form>
 
-        {JSON.stringify(questions)}
+        <div className="question-list">
+          {questions.map((question) => (
+            <Question
+              key={question.id}
+              author={question.author}
+              content={question.content}
+            />
+          ))}
+        </div>
+
       </main>
     </div>
   );
