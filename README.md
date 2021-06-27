@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# Letmeask - NLW-6 TOGETHER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é o projeto que foi criado durante a NLW 6 Together evento oferecido pela [rockeseat](https://www.youtube.com/channel/UCSfwM5u0Kce6Cce8_S72olg).
 
-## Available Scripts
+Para acessar o aplicativo desenvolvido [**clique aqui**](https://letmeask-e3649.web.app/).
 
-In the project directory, you can run:
+## Sobre
 
-### `yarn start`
+Letmeask é uma aplicação ReactJS integrado com o firebase, para criar salas de bate-papo aonde produtores de conteudos poderam criar salas e convidar seus views para responder suas perguntas pela plataforma.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
++ **Funcionalidades da aplicação**
+  
+  + Para criar ou entrar nas salas precisa esta autenticado;
+  + Qualquer pessoa poderá criar salas desde que estejam autenticadas;
+  + A pessoa que criou a sala poderá visualizar o código da sala para convida outra pessoas;
+  + Os views poderam enviar perguntas e dar like em outras pergunta;
+  + Apenas a pessoa que criou a sala poderá excluir a sala;
+  + A pessoa que criou a sala poderá marcar as perguntas como: destacada, respondida ou exclui-la.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tecnologias
 
-### `yarn test`
++ ReactJS
++ Typescrypt
++ Firebase
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Como instalar e rodar no seu computador?
 
-### `yarn build`
+1. baixe e entre no diretorio do projeto pelos seguintes comandos comando:
+```bash
+  # baixe o projeto pelo github
+  git clone https://github.com/MarKus-del/nlw-together-Letmeask
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  # entre no diretorio do projeto
+  cd nlw-together-Letmeask
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. baixe as dependencias do projeto de acordo com seu gerenciador de pacotes:
+```bash
+  # Usando NPM
+  npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  # Usando YARN
+  yarn install
+```
 
-### `yarn eject`
+3. crie sua conta no firebase seguindo a documentação do [firebase](https://firebase.google.com/docs/web/setup?hl=pt-br). depois crie um arquivo .env.local na raiz do projeto contendo as seguinte variaveis do seu projeto firebase:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```env
+REACT_APP_API_KEY=
+REACT_APP_AUTH_DOMAIN=
+REACT_APP_DATABASE_URL=
+REACT_APP_PROJECT_ID=
+REACT_APP_STORAGE_BUCKET=
+REACT_APP_MESSAGING_SENDER_ID=
+REACT_APP_APP_ID=
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Va em autenticação no [console do firebase](https://console.firebase.google.com/u/0/?hl=pt-br) e ative a autenticação pelo google.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+5. Va até o [console do firebase](https://console.firebase.google.com/u/0/?hl=pt-br) e crie um database realtime seguindo o fluxo que o site demonstra, depois va em regras e troque pelo conteudo que esta no arquivo databases.rules.json.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Depois disso seu projeto no firebase estará configurado rode o seguinte comando para iniciar sua aplicação ReactJS.
 
-## Learn More
+```bash
+  # Usando NPM 
+  npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  # Usando YARN
+  yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
